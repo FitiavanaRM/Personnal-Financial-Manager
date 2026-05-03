@@ -1,23 +1,10 @@
-body{
-  height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  background:radial-gradient(#161b24,#030a2c);
-  color:#e9dada;
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: radial-gradient(#161b24,#030a2c);
+    color: #e9dada;
 }
-
-.welcome{
-  background:rgba(255,255,255,.05);
-  padding:35px;
-  border-radius:20px;
-  text-align:center;
-  backdrop-filter:blur(15px);
-  box-shadow:0 20px 50px rgba(0,0,0,.6);
-  animation:float 4s ease-in-out infinite;
-}
-
-/* it's for the animation*/
 @keyframes float{
   50%{transform:translateY(10px);}
 }
@@ -26,8 +13,39 @@ h1{
     font-size:28px;
     margin-bottom:10px;
 }
-p{
-    color:#636566;
+
+#app {
+    display: none; 
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 100vh;
+    background: #0f172a;
+    padding-top: 20px;
+    border-right: 1px solid rgba(255,255,255,0.1);
+}
+.wlcm-view {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content {
+    margin-left: 200px;
+    padding: 20px;
+    background: #f1f5f9;
+    min-height: 100vh;
+}
+
+.welcome {
+    background:rgba(255,255,255,.05);
+    padding:35px;
+    border-radius:20px;
+    text-align:center;
+    backdrop-filter:blur(15px);
+    box-shadow:0 20px 50px rgba(0,0,0,.6);
+    animation:float 4s ease-in-out infinite;
 }
 
 .Enterbtn{
@@ -39,7 +57,30 @@ p{
   cursor:pointer;
 }
 
-.btn-view{
-    display: flex;
-    align-items: end;
+#app {
+    display: none;
+    position: fixed;
+    width: 200px;
+    height: 100vh;
+    background: #0f172a;
+    padding-top: 20px;
+}
+
+.btn-view {
+    display: block;
+    width: 100%;
+    background: none;
+    border: none;
+    color: white;
+    padding: 15px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.btn-view:hover {
+    background: #1e293b;
+}
+
+.six-view {
+    display: none;
 }

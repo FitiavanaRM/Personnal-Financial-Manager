@@ -3,16 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PERSONNAL FINANCIAL MANAGER</title>
+    <title>PERSONNAL FINANCE MANAGER</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="welcome">
-        <h1>PERSONNAL FINANCIAL MANAGER</h1>
-        <p>Welcome to this web app that allows you to manage your personnal budgets</p>
-        <p>Plan your expenses and track your savings goals</p>
-        <button class="Enterbtn" id="enterBtn">ENTER</button>
+    <div class="wlcm-view" id="wlcm" >
+        <div class="welcome" id="welcome">
+            <h1>PERSONNAL FINANCE MANAGER</h1>
+            <p>Welcome to this web app that allows you to manage your personnal budgets</p>
+            <p>Plan your expenses and track your savings goals</p>
+            <button class="Enterbtn" id="enterBtn">ENTER</button>
+        </div>
     </div>
+    
     <div class="content">
         <div class="six-view" id="dashboard">Dashboard</div>
         <div class="six-view" id="budget">Budget</div>
@@ -21,13 +24,15 @@
         <div class="six-view" id="history">History</div>
         <div class="six-view" id="settings">Settings</div>
     </div>
-    <div id="app">
+    <div class="sidebar" id="app">
         <button class="btn-view" id="btn-dashboard">Dashboard</button>
         <button class="btn-view" id="btn-budget">Budget</button>
         <button class="btn-view" id="btn-upcoming">Upcoming</button>
         <button class="btn-view" id="btn-goals">Goals</button>
         <button class="btn-view" id="btn-history">History</button>
-        <button class="btn-view" id="btn-settings">Settings</button>
+        <button class="btn-view" id="btn-settings">
+            Settings
+        </button>
     </div>
     <script src="js/app.js"></script>
 </body>

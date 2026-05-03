@@ -22,14 +22,17 @@ const links = [
 
 enterApp.addEventListener("click", changeWelcome)
 function changeWelcome() {
-    const change = document.getElementById("welcome")
+    const wlcm = document.getElementById("wlcm")
+    wlcm.style.display = "none"
     const app = document.getElementById("app")
-    change.style.display = "none"
     app.style.display = "block"
+    const change = document.getElementById("welcome")
+    change.style.display = "none"
+    
 }
 
 links.forEach(linkObj => {
-    const list = document.getElementById(linkObj.id)
+    const list = document.getElementById("btn-" + linkObj.id)
     list.addEventListener("click", ()=>Changepage(linkObj))
 });
 function Changepage(linkObj) {
