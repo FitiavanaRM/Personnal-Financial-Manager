@@ -2,8 +2,7 @@ body {
     margin: 0;
     min-height: 100vh;
     font-family: Arial, sans-serif;
-    background: radial-gradient(#161b24,#030a2c);
-    color: #e9dada;
+    background: radial-gradient(#0e347a,#030a2c);
 }
 @keyframes float{
   50%{transform:translateY(10px);}
@@ -26,35 +25,36 @@ h1{
     border-right: 1px solid rgba(255,255,255,0.1);
 }
 .wlcm-view {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .content {
     margin-left: 200px;
     padding: 20px;
-    background: #f1f5f9;
+    background: (#0e347a,#030a2c);
     min-height: 100vh;
 }
 
 .welcome {
+    color: #ffffff;
     background:rgba(255,255,255,.05);
     padding:35px;
     border-radius:20px;
     text-align:center;
     backdrop-filter:blur(15px);
     box-shadow:0 20px 50px rgba(0,0,0,.6);
-    animation:float 4s ease-in-out infinite;
+    animation:float 4s infinite;
 }
 
 .Enterbtn{
-  padding:12px 22px;
-  border:0;
-  border-radius:10px;
-  background:#5185d8;
-  color:#2b2525;
-  cursor:pointer;
+    padding:12px 22px;
+    border:0;
+    border-radius:10px;
+    background:#5185d8;
+    color:#2b2525;
+    cursor:pointer;
 }
 
 #app {
@@ -71,7 +71,7 @@ h1{
     width: 100%;
     background: none;
     border: none;
-    color: white;
+    color: rgba(255, 255, 255, 0.5);
     padding: 15px;
     text-align: left;
     cursor: pointer;
@@ -83,4 +83,144 @@ h1{
 
 .six-view {
     display: none;
+}
+
+.settings-btn {
+    padding: 8px 18px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    background: #7d5371;
+    color: #f1eeee;
+    cursor: pointer;
+}
+.header-categories , .subcategory{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.settings-view {
+    background: rgba(255, 255, 255, 0.15);
+    border: 3px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 5px 5px;
+    margin-bottom: 6px;
+    color: #fff;
+}
+
+.categories-settings,
+.edit-categories {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 18px 20px;
+    margin-bottom: 16px;
+    color: #fff;
+}
+
+.add-categories {
+    background: rgba(81, 133, 216, 0.15);
+    border-color: rgba(81, 133, 216, 0.45);
+    color: #030303;
+}
+
+.add-name {
+  width: 98%;
+  margin: 6px 0;
+  padding: 9px 10px;
+  border-radius: 9px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff
+}
+
+.add-subcategory {
+    background: green;
+    color: white;
+}
+
+.save {
+    background: #5185d8;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.delete {
+    background: rgba(248, 113, 113, 0.1);
+    border-color: rgba(249, 94, 94, 0.35);
+    color: #fcfcfc;
+    cursor: pointer;
+}
+
+.save, .delete, .add-categories, .add-subcategory {
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+.add-color {
+    padding: 10px;
+}
+.display-color {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.already-added {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding: 10px;
+}
+
+.category {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.colorCateg {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.category-name {
+    font-weight: 600;
+    color: #e9ecf1;
+    font-size: 15px;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.subcategory-count {
+    color: #020f1f; 
+    font-size: 12px;
+}
+
+.arrow {
+    color: #667eea;
+    font-size: 10px;
 }

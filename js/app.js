@@ -37,13 +37,13 @@ links.forEach(linkObj => {
 });
 function Changepage(linkObj) {
     const pageView = document.getElementsByClassName("six-view")
-    //const btn = document.getElementsByClassName("btn-view")
     for (let i = 0; i < pageView.length; i++) {
         pageView[i].style.display = "none";
     }
     const page = document.getElementById(linkObj.id)
     page.style.display = "block"
 }
-Changepage({
+/*Changepage({
     id : "dashboard"
 });
+*/

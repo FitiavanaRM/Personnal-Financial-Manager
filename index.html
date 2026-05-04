@@ -15,6 +15,15 @@
             <button class="Enterbtn" id="enterBtn">ENTER</button>
         </div>
     </div>
+
+     <div class="sidebar" id="app">
+        <button class="btn-view" id="btn-dashboard">Dashboard</button>
+        <button class="btn-view" id="btn-budget">Budget</button>
+        <button class="btn-view" id="btn-upcoming">Upcoming</button>
+        <button class="btn-view" id="btn-goals">Goals</button>
+        <button class="btn-view" id="btn-history">History</button>
+        <button class="btn-view" id="btn-settings"> Settings</button>
+    </div>
     
     <div class="content">
         <div class="six-view" id="dashboard">Dashboard</div>
@@ -22,18 +31,58 @@
         <div class="six-view" id="upcoming">Upcoming</div>
         <div class="six-view" id="goals">Goals</div>
         <div class="six-view" id="history">History</div>
-        <div class="six-view" id="settings">Settings</div>
+
+        <div class="six-view" id="settings">
+            <h2>Settings</h2>
+            <p>Customize your categories and preference!</p>
+            <div class="settings-view">
+                <button class="settings-btn">Categories</button>
+                <button class="settings-btn">Preference</button>
+                <button class="settings-btn">Data</button>
+            </div>
+
+            <!-- Categories add/display-->
+            <div class="categories-settings" id="categories">
+                <div class="header-categories">
+                    <h4>Categories</h4>
+                    <button class="add-categories" id="addCategories">+ New</button>
+                </div>
+                <div class="already-added" id="alreadyAdded"></div>
+            </div>
+            <!-- Edit -->
+            <div class="edit-categories" id="editCategories">
+                <h4>Edit Categories</h4>
+                <div class="name">Name:</div>
+                <input type="text" class="add-name" id="name-input" placeholder="Categories name">
+                <div class="color">Color:</div>
+                <div class="add-color" id="color-choose">
+                    <button class="display-color" data-color="#2b5990" style="background-color: #2b5990;"></button>
+                    <button class="display-color" data-color="#22d1bc" style="background-color: #22d1bc;"></button>
+                    <button class="display-color" data-color="#7d5fff" style="background-color: #7d5fff;"></button>
+                    <button class="display-color" data-color="#e29236" style="background-color: #e29236;"></button>
+                    <button class="display-color" data-color="#d82d1a" style="background-color: #d82d1a;"></button>
+                    <button class="display-color" data-color="#464b4a" style="background-color: #464b4a;"></button>
+                    <button class="display-color" data-color="#697978" style="background-color: #697978;"></button>
+                    <button class="display-color" data-color="#78ddf3" style="background-color: #78ddf3;"></button>
+                </div>
+
+                <div class="subcategory">
+                    <div>
+                        <h4>Subcategory</h4>
+                        <p>The subcategory allow more accurate tracking</p>
+                    </div>
+                    <button class="add-subcategory">+ Subcategory</button>
+                </div>
+                <div class="list-subcategory" id="listSubcategory"></div>
+                <div class="edit-categories-subcategories">
+                    <button class="delete" id="btnDelete">🗑️Delete</button>
+                    <button class="save" id="btnSave">⬇️Save</button>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="sidebar" id="app">
-        <button class="btn-view" id="btn-dashboard">Dashboard</button>
-        <button class="btn-view" id="btn-budget">Budget</button>
-        <button class="btn-view" id="btn-upcoming">Upcoming</button>
-        <button class="btn-view" id="btn-goals">Goals</button>
-        <button class="btn-view" id="btn-history">History</button>
-        <button class="btn-view" id="btn-settings">
-            Settings
-        </button>
-    </div>
+
     <script src="js/app.js"></script>
+    <script src="js/categories.js"></script>
 </body>
 </html>
