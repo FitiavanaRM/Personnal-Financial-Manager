@@ -10,8 +10,9 @@
     <div class="wlcm-view" id="wlcm" >
         <div class="welcome" id="welcome">
             <h1>PERSONNAL FINANCE MANAGER</h1>
-            <p>Welcome to this web app that allows you to manage your personnal budgets</p>
-            <p>Plan your expenses and track your savings goals</p>
+            <p>Welcome to this web app that allows you to manage your personnal budgets <br>
+                Plan your expenses and track your savings goals
+            </p>
             <button class="Enterbtn" id="enterBtn">ENTER</button>
         </div>
     </div>
@@ -27,7 +28,47 @@
     
     <div class="content">
         <div class="six-view" id="dashboard">Dashboard</div>
-        <div class="six-view" id="budget">Budget</div>
+        <div class="six-view" id="budget">
+            <div class="head-budget">
+                <h2>Budget</h2>
+                <div class="month-info">
+                    <span id="month">April 2026</span>
+                    <span id="count">0 Transaction</span>
+                </div>
+                <button id="btn-add-transaction" class="add-transaction">+ Add</button>
+            </div>
+
+            <div class="budget-container">
+                <div class="transaction-form">
+                    <h4>New Transaction</h4>
+
+                    <div class="type">
+                        <button id="type-depense" class="btn-type">Depense</button>
+                        <button id="type-revenu" class="btn-type">Revenu</button>
+                    </div>
+
+                    <input type="text" id="trans-label" placeholder="Libellé (ex: Loyer)" />
+
+            <div class="amount-row">
+                <input type="number" id="trans-amount" placeholder="Montant" step="0.01" />
+                <span class="currency">Ar</span>
+            </div>
+
+            <select id="trans-category">
+                <option value="">Sélectionner une catégorie</option>
+            </select>
+
+            <select id="trans-subcategory">
+                <option value="">Sous-catégorie</option>
+            </select>
+
+            <input type="date" id="trans-date" />
+
+            <button id="btn-save-transaction" class="save-trans-btn">Ajouter la transaction</button>
+                </div>
+            </div>
+
+        </div>
         <div class="six-view" id="upcoming">Upcoming</div>
         <div class="six-view" id="goals">Goals</div>
         <div class="six-view" id="history">History</div>
@@ -71,18 +112,37 @@
                         <h4>Subcategory</h4>
                         <p>The subcategory allow more accurate tracking</p>
                     </div>
-                    <button class="add-subcategory">+ Subcategory</button>
+                    <button class="add-subcategory" id="btn-add-subcategories">+ Subcategory</button>
                 </div>
-                <div class="list-subcategory" id="listSubcategory"></div>
+                <ul id="listSubcategory" class="subcategory-list"></ul>
                 <div class="edit-categories-subcategories">
                     <button class="delete" id="btnDelete">🗑️Delete</button>
                     <button class="save" id="btnSave">⬇️Save</button>
                 </div>
             </div>
+
+            <!-- // preference // -->
+            <div class="preference" id="display-pref">
+                <label for="devise">Devise</label>
+                <select id="devise">
+                    <option value="Ar">Arriary (Ar)</option>
+                    <option value="€">Euro (€)</option>
+                    <option value="$">Dollar ($)</option>
+                </select>
+                <label for="date">Date Format</label>
+                <select id="date">
+                    <option value="jj/mm/aaaa">JJ/MM/AAAA</option>
+                    <option value="mm/jj/aaaa">MM/JJ/AAAA</option>
+                    <option value="aaaa-mm-jj">AAAA-MM-JJ</option>
+                </select>
+                <button id="btn-save-pref">SAVE</button>
+
+            </div>  
+
         </div>
     </div>
 
-    <script src="js/app.js"></script>
+    <script src="js/navigations.js"></script>
     <script src="js/categories.js"></script>
 </body>
 </html>

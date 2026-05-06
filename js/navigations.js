@@ -28,22 +28,20 @@ function changeWelcome() {
     app.style.display = "block"
     const change = document.getElementById("welcome")
     change.style.display = "none"
-    
+    Changepage(dashboard)
 }
 
 links.forEach(linkObj => {
     const list = document.getElementById("btn-" + linkObj.id)
     list.addEventListener("click", ()=>Changepage(linkObj))
 });
+
 function Changepage(linkObj) {
     const pageView = document.getElementsByClassName("six-view")
     for (let i = 0; i < pageView.length; i++) {
         pageView[i].style.display = "none";
     }
     const page = document.getElementById(linkObj.id)
-    page.style.display = "block"
+    page.style.display = "block";
 }
-/*Changepage({
-    id : "dashboard"
-});
-*/
+
