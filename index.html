@@ -77,9 +77,9 @@
             <h2>Settings</h2>
             <p>Customize your categories and preference!</p>
             <div class="settings-view">
-                <button class="settings-btn">Categories</button>
-                <button class="settings-btn">Preference</button>
-                <button class="settings-btn">Data</button>
+                <button class="settings-btn" id="categories-btn">Categories</button>
+                <button class="settings-btn" id="preference-btn">Preference</button>
+                <button class="settings-btn" id="data-btn">Data</button>
             </div>
 
             <!-- Categories add/display-->
@@ -90,7 +90,7 @@
                 </div>
                 <div class="already-added" id="alreadyAdded"></div>
             </div>
-            <!-- Edit -->
+            
             <div class="edit-categories" id="editCategories">
                 <h4>Edit Categories</h4>
                 <div class="name">Name:</div>
@@ -107,17 +107,19 @@
                     <button class="display-color" data-color="#78ddf3" style="background-color: #78ddf3;"></button>
                 </div>
 
-                <div class="subcategory">
-                    <div>
-                        <h4>Subcategory</h4>
-                        <p>The subcategory allow more accurate tracking</p>
+                <div id="display-subcateg">
+                    <div class="subcategory">
+                        <div>
+                            <h4>Subcategory</h4>
+                            <p>The subcategory allow more accurate tracking</p>
+                        </div>
+                        <button class="add-subcategory" id="btn-add-subcategories">+ Subcategory</button>
                     </div>
-                    <button class="add-subcategory" id="btn-add-subcategories">+ Subcategory</button>
-                </div>
-                <ul id="listSubcategory" class="subcategory-list"></ul>
-                <div class="edit-categories-subcategories">
-                    <button class="delete" id="btnDelete">🗑️Delete</button>
-                    <button class="save" id="btnSave">⬇️Save</button>
+                    <ul id="listSubcategory" class="subcategory-list"></ul>
+                    <div class="edit-categories-subcategories">
+                        <button class="delete" id="btnDelete">🗑️Delete</button>
+                        <button class="save" id="btnSave">⬇️Save</button>
+                    </div>
                 </div>
             </div>
 
@@ -138,6 +140,10 @@
                 <button id="btn-save-device" class="btn-save-pref">SAVE</button>
 
             </div>  
+
+            <div class="Data" id="display-data">
+                <h4>Data</h4>
+            </div>
 
         </div>
     </div>
