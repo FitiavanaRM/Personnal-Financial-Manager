@@ -4,7 +4,6 @@ const expensebtn = document.getElementById("type-expense")
 const incomebtn = document.getElementById("type-income")
 const saveTransactionbtn = document.getElementById("btn-save-transaction")
 const type = document.querySelector(".type-btn.active")
-const label = document.getElementById("trans-label")
 const displaytransact = document.getElementById("display-transaction")
 let transactions = [];
 
@@ -64,19 +63,20 @@ incomebtn.addEventListener("click", () => {
 saveTransactionbtn.addEventListener("click", () => {
     const isExpense = document.getElementById("type-expense").classList.contains("active");
     const type = isExpense ? "expense" : "income";
+    const labelValue = document.getElementById("trans-label").value.trim();
     const amount = parseFloat(document.getElementById("trans-amount").value);
     const categId = categoriesSelect.value;
     const subCateg = subCategoriesSelect.value;
     const date = document.getElementById("trans-date").value;
 
-    if (!label.value.trim || !amount || !categId || !date) {
+    if (!labelValue|| !amount || !categId || !date) {
         alert("Please fill in all fields!");
         return;
     }
     const newTransaction = {
         id: Date.now(),
         type: type,
-        label: label,
+        label: labelValue,
         amount: amount,
         categId: parseInt(categId),
         subCateg: subCateg,
@@ -84,7 +84,8 @@ saveTransactionbtn.addEventListener("click", () => {
     };
     transactions.push(newTransaction);
     saveTransaction();
-    
+    displayTransaction();
+
     label.value = "";
     document.getElementById("trans-amount").value = "";
     subCategoriesSelect.innerHTML = '<option value="">Subcategory</option>';
@@ -97,15 +98,30 @@ function displayTransaction() {
         const div = document.createElement("div");
         div.className = `transaction-item ${trans.type}`;
         div.innerHTML = `
-            <span class = "trans-date">${trans.date}</span>
-            <div class = "trans-details>
-                <strong>${trans.label}</strong><br>
-                <small>${trans.subCateg || ''}</small>
-            </div>
-        `
+            <span>${trans.date}</span>
+            <span>${trans.label}</span>
+            <span>${trans.subcategory || ''}</span>
+            <span class="amount ${trans.type}">
+                ${trans.type === "expense" ? '-' : '+'} ${trans.amount} Ar
+            </span>
+            <button class="delete-btn" data-id="${trans.id}">🗑️</button>
+        `;
+        displaytransact.appendChild(div);
     })
+    const deletebtn = document.querySelectorAll(".delete-btn")
+    deletebtn.forEach(btn => {
+        btn.addEventListener("click", () => {
+            if(confirm("Delete this transaction?")) {
+                const id = parseInt(btn.getAttribute("data-id"))
+                transactions = transactions.filter(trans => trans.id !== id);
+                saveTransaction();
+                displayTransaction();
+            }
+        });
+    });
 }
 document.addEventListener("DOMContentLoaded", () => {
     loadTransaction();
     selectCategories();
+    displayTransaction();
 });
