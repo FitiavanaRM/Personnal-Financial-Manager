@@ -14,6 +14,7 @@ let editingId = null;
 
 
 document.addEventListener("DOMContentLoaded", () => {
+    localCategories();
     displayCategories();
 }); 
 
@@ -21,28 +22,6 @@ function localCategories() {
     if (localStorage.getItem("pfm_categories")) {
         categories = JSON.parse(localStorage.getItem("pfm_categories"));
     }
-    else {
-        categories = DefaultCategories();
-        saveCategories();
-    }
-}
-
-function DefaultCategories () {
-    return [
-        {
-            id: 1, name: "Salary", color: "#464b4a", subCategories: ["Bonus", "Main Salary"]
-        },
-        {
-            id: 2, name: "Food", color: "#22d1bc", subCategories : ["Restaurant", "Street food"]
-        },
-        {
-            id: 3, name: "Transport", color: "#2b5990", subCategories: ["Taxi", "Bus"]
-        },
-        {
-            id: 4, name: "Utilities", color: "#78ddf3", subCategories: ["Electricity", "water", "Internet"]
-        },
-
-    ]
 }
 
 function saveCategories() {
@@ -131,14 +110,19 @@ btnSave.addEventListener("click", ()=> {
         return;
     }
     const subCategorie = getSubCategories();
-    const newCateg = {
-        id : Date.now(),
-        name : name,
-        color : selectColor,
-        subCategories : []
-    };
-
-    categories.push(newCateg);
+    if (editingId) {
+        const categUptdate = categories.find(c => c.id === editingId)
+    }
+    else {
+        const newCateg = {
+            id : Date.now(),
+            name : name,
+            color : selectColor,
+            subCategories : subCategorie
+        };
+        categories.push(newCateg)
+    }
+    
     saveCategories();
     displayCategories();
     editCategories.style.display = "none";
@@ -157,11 +141,11 @@ btnDelete.addEventListener("click", () => {
 })
 
 function editCategory(id) {
-    currentEditingId = id;
+    editingId = id;
     const category = categories.find(c => c.id === id);
     if (!category) return;
 
-    document.getElementById("name-input").value = category.name;
+    inputBox.value = category.name;
     selectedColor = category.color;
 
     const ul = document.getElementById("listSubcategory");
@@ -178,7 +162,7 @@ function editCategory(id) {
         ul.appendChild(li);
     });
 
-    document.getElementById("editCategories").style.display = "block";
+    editCategories.style.display = "block";
 }
 
 

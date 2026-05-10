@@ -28,11 +28,13 @@
     
     <div class="content">
         <div class="six-view" id="dashboard">Dashboard</div>
+        
+        <!-- BUDGET -->
         <div class="six-view" id="budget">
             <div class="head-budget">
                 <h2>Budget</h2>
                 <div class="month-info">
-                    <span id="month">April 2026</span>
+                    <span id="month">Mai 2026</span>
                     <span id="count">0 Transaction</span>
                 </div>
                 <button id="btn-add-transaction" class="add-transaction">+ Add</button>
@@ -43,31 +45,33 @@
                     <h4>New Transaction</h4>
 
                     <div class="type">
-                        <button id="type-depense" class="btn-type">Depense</button>
-                        <button id="type-revenu" class="btn-type">Revenu</button>
+                        <button id="type-depense" class="btn-type">Expenditure</button>
+                        <button id="type-revenu" class="btn-type">Income</button>
                     </div>
 
-                    <input type="text" id="trans-label" placeholder="Libellé (ex: Loyer)" />
+                    <input type="text" id="trans-label" placeholder="Label (ex: rent)" />
 
             <div class="amount-row">
-                <input type="number" id="trans-amount" placeholder="Montant" step="0.01" />
+                <input type="number" id="trans-amount" placeholder="Montant"/>
                 <span class="currency">Ar</span>
             </div>
 
             <select id="trans-category">
-                <option value="">Sélectionner une catégorie</option>
+                <option value="">Select a category</option>
             </select>
-
             <select id="trans-subcategory">
-                <option value="">Sous-catégorie</option>
+                <option value="">Subcategory</option>
             </select>
-
             <input type="date" id="trans-date" />
 
-            <button id="btn-save-transaction" class="save-trans-btn">Ajouter la transaction</button>
+            <button id="btn-save-transaction" class="save-trans-btn">Add transaction</button>
                 </div>
             </div>
 
+            <div class="transactionList">
+                <h3>Transaction</h3>
+                <div id="display-transaction"></div>
+            </div>
         </div>
         <div class="six-view" id="upcoming">Upcoming</div>
         <div class="six-view" id="goals">Goals</div>
