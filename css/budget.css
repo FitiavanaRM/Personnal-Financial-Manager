@@ -32,6 +32,7 @@
 }
 
 .transaction-form {
+    display: none;
     background: rgba(255,255,255,0.08);
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 10px;
@@ -89,21 +90,33 @@
 .transactionList {
     flex: 1;
 }
+.transaction-header,
+.transaction-item {
+  display: grid;
+  grid-template-columns: 140px 1fr 1fr 120px 40px;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+}
 
-#display-transaction {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
+.transaction-header {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px 8px 0 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 13px;
+  font-weight: 600;
+  color: #00c97a;
 }
 
 .transaction-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 10px;
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 5px;
-    font-size: 15px;
-    color: #fff;
+  background: rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 13px;
+  color: #fff;
+}
+
+#display-transaction {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  overflow: hidden;
 }

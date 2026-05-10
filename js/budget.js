@@ -3,9 +3,10 @@ const subCategoriesSelect = document.getElementById("trans-subcategory")
 const expensebtn = document.getElementById("type-expense")
 const incomebtn = document.getElementById("type-income")
 const saveTransactionbtn = document.getElementById("btn-save-transaction")
-const type = document.querySelector(".type-btn.active")
 const displaytransact = document.getElementById("display-transaction")
+const addBtnTrans = document.getElementById("btn-add-transaction")
 let transactions = [];
+const displaytransactForm = document.getElementById("transactionForm")
 
 function loadTransaction() {
     if(localStorage.getItem("pfm_transactions")) {
@@ -17,6 +18,16 @@ function saveTransaction() {
     localStorage.setItem("pfm_transactions", JSON.stringify(transactions));
 }
 
+addBtnTrans.addEventListener("click", () => {
+    if (displaytransactForm.style.display === "none" || displaytransactForm.style.display === "") {
+        displaytransactForm.style.display = "block";
+        addBtnTrans.textContent = "Cancel";
+    }
+    else {
+        displaytransactForm.style.display = "none";
+        addBtnTrans.textContent = "+ Add";
+    }
+});
 function selectCategories () {
     categoriesSelect.innerHTML = '<option value="">Select a category</option>';
     if (localStorage.getItem("pfm_categories")) {
@@ -32,8 +43,7 @@ function selectCategories () {
 
 categoriesSelect.addEventListener("change", function() {
     subCategoriesSelect.innerHTML = '<option value="">Subcategories</option>';
-    const opt = document.createElement("option");
-
+    
     if (!this.value) {
         return;
     }
@@ -42,6 +52,7 @@ categoriesSelect.addEventListener("change", function() {
         const search = categories.find(categ => categ.id == this.value)
         if (search && search.subCategories) {
             search.subCategories.forEach(subCateg => {
+                const opt = document.createElement("option");
                 opt.value = subCateg;
                 opt.textContent = subCateg;
                 subCategoriesSelect.appendChild(opt);
@@ -86,13 +97,25 @@ saveTransactionbtn.addEventListener("click", () => {
     saveTransaction();
     displayTransaction();
 
-    label.value = "";
+    labelValue.value = "";
     document.getElementById("trans-amount").value = "";
     subCategoriesSelect.innerHTML = '<option value="">Subcategory</option>';
+
+    displaytransactForm.style.display = "none"
+    addBtnTrans.textContent = "+ Add";
 })
 
 function displayTransaction() {
     displaytransact.innerHTML = "";
+
+    displaytransact.innerHTML += `
+        <div class="transaction-header">
+            <span>Date</span>
+            <span>Labels</span>
+            <span>Categories</span>
+            <span>Amount</span>
+        </div>
+    `;
 
     transactions.forEach(trans => {
         const div = document.createElement("div");
@@ -100,7 +123,7 @@ function displayTransaction() {
         div.innerHTML = `
             <span>${trans.date}</span>
             <span>${trans.label}</span>
-            <span>${trans.subcategory || ''}</span>
+            <span>${trans.subCateg || '---'}</span>
             <span class="amount ${trans.type}">
                 ${trans.type === "expense" ? '-' : '+'} ${trans.amount} Ar
             </span>
