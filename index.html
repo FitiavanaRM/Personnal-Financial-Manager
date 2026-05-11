@@ -136,7 +136,43 @@
         <div class="six-view" id="goals">Goals</div>
 
 <!--  ///////////////////////////////////////////////////////////////// -->
-        <div class="six-view" id="history">History</div>
+        <div class="six-view" id="history">
+            <h2>HISTORY</h2>
+            <p>Filter and analyse all your past operation</p>
+
+            <div class="filter">
+                <select id="filterPeriod">
+                    <option value="all">All transaction</option>
+                    <option value="month">This month</option>
+                    <option value="3month">Last 3 month</option>
+                    <option value="year">This year</option>
+                </select>
+                <input type="date" id="filterStart" placeholder="Start date">
+                <input type="date" id="filterEnd" placeholder="End date">
+
+                <select id="typeFilter">
+                    <option value="">All types</option>
+                    <option value="expense">Expense</option>
+                    <option value="income">Income</option>
+                </select>
+
+                <select id="categoryFilter">
+                    <option value="">All category</option>
+                </select>
+                <button id="resetFilter">Reset</button>
+            </div>
+            <div class="history-summary">
+                <div>Total Income:
+                    <span id="totalIncome">0 Ar</span>
+                </div>
+                <div>Total expenses:
+                    <span id="totalIncome">0 Ar</span>
+                </div>
+                <div>Net Balance: 
+                    <span id="netBalance">0 Ar</span>
+                </div>
+            </div>
+        </div>
 
 <!--  ///////////////////////////////////////////////////////////////// -->
 
