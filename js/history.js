@@ -52,4 +52,45 @@ function applyFilter() {
             return dateFilt.getFullYear() === now.getFullYear()
         })
     }
+    if (filterStart.value) {
+        filtered = filtered.filter(filt =>
+            new Date(filt.date) >= new Date(filterStart.value)
+        )
+    }
+    if (filterEnd.value) {
+        filtered = filtered.filter(filt =>
+            new Date(filt.date) <= new Date(filterEnd.value)
+        )
+    }
+    if (typeFilter.value) {
+        filtered = filtered.filter(filt =>
+            filt.type === typeFilter.value
+        )
+    }
+    if (categoryFilter.value) {
+        filtered = filtered.filter(filt =>
+            filt.categoryId == categoryFilter.value
+        )
+    }
+}
+function displayTransaction(list) {
+    historyList.innerHTML = "";
+    if (list.length === 0) {
+        historyList.innerHTML = "<p>No transactions found</p>";
+        return;
+    }
+    list.slice().reverse().forEach(t => {
+        const div = document.createElement("div")
+        div.className = "transaction-item";
+        div.innerHTML = `
+            <div>
+                <strong>${t.label}</strong>
+                <small>${t.date}</small>
+            </div>
+            <div class="${t.type}">
+                ${t.type === "income" ? "+" : "-"}${t.amount} Ar
+            </div>
+        `;
+        historyList.appendChild(div);
+    });
 }
