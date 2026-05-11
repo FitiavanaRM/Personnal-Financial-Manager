@@ -18,6 +18,36 @@ suivantes.
 
 # FONCTIONNEMENT
 - Un page welcome: on clique sur enter pour voir la page suivant
+- Après, il y a les 6 view
 - Par defaut c'est la page Dashboard qui d'ouvre en premier
 - Et on peut choisir ce qu'on veut faire
--
+
+# DASHBOARD
+- On voit notre solde actuel
+- Notre reveu
+- notre dépense
+- repartition des dépenses
+- A venir
+- Objectif
+
+# BUDGET
+- On peut ajouter notre budget que ce soit Expenditure ou incomme
+- Et on voit la liste de transaction
+
+# GOALS
+ - Ajout des objecifs
+ - on voit les totals
+ - les goals actif
+ - et le pourcentage
+ - on peut déposer
+
+ # HISTORY
+ - On peut choisir notre durée de transaction
+ - le jour de début et la fin
+ - le types
+ - et tous les catégories
+
+ # Setting
+ - c'est là qu'on choisit catégories et sous categories
+ - la preference
+ - et le data 
