@@ -71,7 +71,7 @@
     color: #E24B4A; 
 }
 .chart-container {
-    background: #fff;
+    background: rgb(126, 158, 208);
     border: 0.5px solid #e0e0e0;
     border-radius: 12px;
     padding: 1.25rem;
@@ -87,7 +87,7 @@
 }
 .upcoming-box,
 .goals-box {
-    background: #fff;
+    background: rgb(126, 158, 208);;
     border: 0.5px solid #e0e0e0;
     border-radius: 12px;
     padding: 1.25rem;
