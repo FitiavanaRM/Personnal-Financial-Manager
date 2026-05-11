@@ -84,13 +84,31 @@ function displayTransaction(list) {
         div.className = "transaction-item";
         div.innerHTML = `
             <div>
-                <strong>${t.label}</strong>
-                <small>${t.date}</small>
+                <strong>${filt.label}</strong>
+                <small>${filt.date}</small>
             </div>
-            <div class="${t.type}">
-                ${t.type === "income" ? "+" : "-"}${t.amount} Ar
+            <div class="${filt.type}">
+                ${filt.type === "income" ? "+" : "-"}${filt.amount} Ar
             </div>
         `;
         historyList.appendChild(div);
     });
+}
+function updateSummary(list) {
+    let income = 0;
+    let expense = 0;
+
+    list.forEach(filt => {
+        if (filt.type === "income") {
+            income += Number(filt.amount)
+        }
+        else {
+            expense += Number(filt.amount)
+        }
+    });
+
+    const balance = income - expense;
+    totalIncome.textContent = income + "Ar";
+    totalExpense.textContent = expense + "Ar";
+    netBalance.textContent = balance + "Ar";
 }
