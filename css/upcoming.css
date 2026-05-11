@@ -1,0 +1,189 @@
+#upcoming {
+    padding: 20px;
+    color: #fff;
+}
+
+.head-budget {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.head-budget h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #fff;
+}
+
+.newUpcoming {
+    background: rgba(81, 133, 216, 0.8);
+    border: 1px solid rgba(81, 133, 216, 0.5);
+    color: white;
+    padding: 10px 22px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.newUpcoming:hover {
+    background: rgba(81, 133, 216, 1);
+    transform: translateY(-2px);
+}
+.summaryUpcoming {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+    margin-bottom: 25px;
+}
+
+.upcomingMonthly {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 20px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+.upcomingMonthly p {
+    margin: 0 0 10px 0;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.upcomingMonthly h3 {
+    margin: 8px 0;
+    font-size: 1.65rem;
+    font-weight: bold;
+}
+
+.upcomingMonthly small {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.95rem;
+}
+
+.filter {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.filterBtn {
+    padding: 9px 20px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.filterBtn.active,
+.filterBtn:hover {
+    background: rgba(81, 133, 216, 0.8);
+    border-color: rgba(81, 133, 216, 0.6);
+}
+
+.calendelar h3 {
+    margin-bottom: 18px;
+    color: #fff;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    gap: 16px;
+    transition: 0.3s;
+}
+
+.timeline-item:hover {
+    background: rgba(255, 255, 255, 0.18);
+    transform: translateX(5px);
+}
+
+.timeline-date {
+    min-width: 55px;
+    text-align: center;
+    background: rgba(255,255,255,0.1);
+    padding: 8px 10px;
+    border-radius: 10px;
+}
+
+.timeline-date .day {
+    font-size: 1.6rem;
+    font-weight: bold;
+    display: block;
+    line-height: 1;
+}
+
+.timeline-content {
+    flex: 1;
+}
+
+.timeline-content b {
+    font-size: 1.08rem;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.timeline-content small {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.timeline-amount {
+    font-weight: bold;
+    font-size: 1.15rem;
+    min-width: 120px;
+    text-align: right;
+}
+
+.red { color: #ff6b6b; }
+.green { color: #22d1bc; }
+
+.timeline-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.timeline-actions button {
+    background: rgba(255,255,255,0.1);
+    border: none;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    cursor: pointer;
+    color: #fff;
+    transition: 0.2s;
+}
+
+.timeline-actions button:hover {
+    background: rgba(255,255,255,0.25);
+}
+/* Empty State */
+#timeline p {
+    text-align: center;
+    padding: 60px 20px;
+    color: rgba(255,255,255,0.6);
+    font-size: 1.1rem;
+}
+@media (max-width: 768px) {
+    .summaryUpcoming {
+        grid-template-columns: 1fr;
+    }
+    
+    .timeline-item {
+        flex-wrap: wrap;
+        text-align: center;
+    }
+}
