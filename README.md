@@ -18,3 +18,6 @@ suivantes.
 
 # FONCTIONNEMENT
 - Un page welcome: on clique sur enter pour voir la page suivant
+- Par defaut c'est la page Dashboard qui d'ouvre en premier
+- Et on peut choisir ce qu'on veut faire
+-
