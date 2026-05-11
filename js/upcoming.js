@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 upcomingCharges = upcomingCharges.filter(c => c.id !== id);
                 saveUpcoming();
                 showTimeline();
-                updateSummary();
+                updateUpcommingSummary();
             }
         }
 

@@ -1,4 +1,4 @@
-const filterPeriode = document.getElementById("filterPeriod")
+/*const filterPeriode = document.getElementById("filterPeriod")
 const filterStart = document.getElementById("filterStart")
 const filterEnd = document.getElementById("filterEnd")
 const typeFilter = document.getElementById("typeFilter")
@@ -139,4 +139,4 @@ function addEvents() {
     });
 }
 
-document.addEventListener("DOMContentLoaded", init);
+document.addEventListener("DOMContentLoaded", init);*/

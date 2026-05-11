@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="css/setting.css">
     <link rel="stylesheet" href="css/upcoming.css">
     <link rel="stylesheet" href="css/history.css">
+    <link rel="stylesheet" href="css/goals.css">
+    <link rel="stylesheet" href="css/dashboard.css">
 </head>
 <body>
     <div class="wlcm-view" id="wlcm" >
@@ -183,7 +185,54 @@
         </div>
 <!--  ///////////////////////////////////////////////////////////////// -->
 
-        <div class="six-view" id="goals">Goals</div>
+        <div class="six-view" id="goals">
+            <div class="goals-container">
+                <header class="goals-header">
+                    <div class="header-text">
+                        <h2>Goals</h2>
+                        <p>Set a target amount and fund your pot</p>
+                    </div>
+                    <button class="btn-primary">+ New goal</button>
+                </header>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span>TOTAL SAVED</span>
+                        <div class="stat-value">0 Ar</div>
+                    </div>
+                    <div class="stat-card">
+                        <span>ACTIVE GOALS</span>
+                        <div class="stat-value">0 / 0</div>
+                    </div>
+                    <div class="stat-card">
+                        <span>OVERALL PROGRESS</span>
+                        <div class="stat-value text-green">0 %</div>
+                    </div>
+                </div>
+                <div class="goals-grid">
+                    <div class="goal-item">
+                        <div class="goal-top">
+                            <h3></h3>
+                            <span class="deadline">Deadline: </span>
+                        </div>
+                        <div class="goal-body">
+                            <div class="progress-ring-container">
+                                <svg class="progress-ring" width="80" height="80">
+                                    <circle class="ring-bg" cx="40" cy="40" r="35" />
+                                    <circle class="ring-fill" cx="40" cy="40" r="35" style="stroke-dasharray: 220; stroke-dashoffset: 83.6;" />
+                                </svg>
+                                <span class="percentage">0%</span>
+                            </div>
+                            <div class="goal-info">
+                                <p class="saved">0 Ar</p>
+                                <p class="target">of 0 Ar (target)</p>
+                                <p class="monthly-add">0 Ar this month</p>
+                            </div>
+                            <button class="btn-action">0 Ar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 <!--  ///////////////////////////////////////////////////////////////// -->
         <div class="six-view" id="history">
@@ -309,5 +358,6 @@
     <script src="js/upcoming.js"></script>
     <script src="js/history.js"></script>
     <script src="js/dashboard.js"></script>
+    <script src="js/goals.js"></script>
 </body>
 </html>
