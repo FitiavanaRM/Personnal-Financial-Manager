@@ -70,7 +70,37 @@
                 <div id="display-transaction"></div>
             </div>
         </div>
-        <div class="six-view" id="upcoming">Upcoming</div>
+        <div class="six-view" id="upcoming">
+            <div class="head-budget">
+                <h2>Upcoming</h2>
+                <button id="UpcomingBtn" class="newUpcoming">+New</button>
+            </div>
+            <div class="summaryUpcoming">
+                <div class="upcomingMonthly">
+                    <p>TO PAY THIS MONTH</p>
+                    <h3 id="trans-upcoming" class="red">-900 500 Ar</h3>
+                    <small id="countMonthly">2 Levy</small>
+                </div>
+                <div class="upcomingMonthly">
+                    <p>NEXT PAYMENT</p>
+                    <h3 id="nextPayment">Rent</h3>
+                    <small id="nextPaymentDate">20 Mey</small>
+                </div>
+                <div class="upcomingMonthly">
+                    <p>END OF THE MONTH PROJECT BALANCE</p>
+                    <h3 id="balanceProject" class="green">+600 000 Ar</h3>
+                </div>
+            </div>
+            <div class="filter">
+                <button class="filterBtn" data-filter="all">All</button>
+                <button class="filterBtn" data-filter="monthly">Monthly</button>
+                <button class="filterBtn" data-filter="yearly">Yearly</button>
+            </div>
+            <div class="calendelar">
+                <h3>Calendelar of direct debits</h3>
+                <div id="timeline"></div>
+            </div>
+        </div>
         <div class="six-view" id="goals">Goals</div>
         <div class="six-view" id="history">History</div>
 
