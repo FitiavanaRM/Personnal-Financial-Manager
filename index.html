@@ -31,8 +31,8 @@
     
     <div class="content">
         <div class="six-view" id="dashboard">Dashboard</div>
-        
-        <!-- BUDGET -->
+
+<!--  ///////////////////////////////////////////////////////////////// -->
         <div class="six-view" id="budget">
             <div class="head-budget">
                 <h2>Budget</h2>
@@ -71,25 +71,53 @@
                 <div id="display-transaction"></div>
             </div>
         </div>
+
+<!--  ///////////////////////////////////////////////////////////////// -->
         <div class="six-view" id="upcoming">
             <div class="head-budget">
                 <h2>Upcoming</h2>
                 <button id="UpcomingBtn" class="newUpcoming">+New</button>
             </div>
+            <div id="formUpcoming" class="upcoming-form" style="display: none;">
+                <h3>New Upcoming</h3>
+                <label>Label</label>
+                <input type="text" id="labelForm" placeholder="Ex: Apartement Lent">
+
+                <label>Amount</label>
+                <div class="amount-row">
+                    <input type="number" id="amountForm" placeholder="0">
+                    <span class="currency">Ar</span>
+                </div>
+                <label>Frequency</label>
+                <select id="form-freq">
+                    <option value="Monthly">Monthly</option>
+                    <option value="Yearly">Yearly</option>
+                </select>
+                <label>Next Payment Date</label>
+                <input type="date" id="form-date">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="form-auto" checked>
+                    Automatic Debit
+                </label>
+                <div class="form-buttons">
+                    <button id="form-cancel" class="cancel-btn">Cancel</button>
+                    <button id="form-save" class="save-btn">Add Charge</button>
+                </div>
+            </div>
             <div class="summaryUpcoming">
                 <div class="upcomingMonthly">
                     <p>TO PAY THIS MONTH</p>
-                    <h3 id="trans-upcoming" class="red">-900 500 Ar</h3>
-                    <small id="countMonthly">2 Levy</small>
+                    <h3 id="trans-upcoming" class="red">0 Ar</h3>
+                    <small id="countMonthly">0 Levy</small>
                 </div>
                 <div class="upcomingMonthly">
                     <p>NEXT PAYMENT</p>
-                    <h3 id="nextPayment">Rent</h3>
-                    <small id="nextPaymentDate">20 Mey</small>
+                    <h3 id="nextPayment">Aucune</h3>
+                    <small id="nextPaymentDate">---</small>
                 </div>
                 <div class="upcomingMonthly">
                     <p>END OF THE MONTH PROJECT BALANCE</p>
-                    <h3 id="balanceProject" class="green">+600 000 Ar</h3>
+                    <h3 id="balanceProject" class="green">0 Ar</h3>
                 </div>
             </div>
             <div class="filter">
@@ -102,8 +130,14 @@
                 <div id="timeline"></div>
             </div>
         </div>
+<!--  ///////////////////////////////////////////////////////////////// -->
+
         <div class="six-view" id="goals">Goals</div>
+
+<!--  ///////////////////////////////////////////////////////////////// -->
         <div class="six-view" id="history">History</div>
+
+<!--  ///////////////////////////////////////////////////////////////// -->
 
         <div class="six-view" id="settings">
             <h2>Settings</h2>
