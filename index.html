@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/budget.css">
     <link rel="stylesheet" href="css/setting.css">
     <link rel="stylesheet" href="css/upcoming.css">
+    <link rel="stylesheet" href="css/history.css">
 </head>
 <body>
     <div class="wlcm-view" id="wlcm" >
@@ -29,8 +30,57 @@
         <button class="btn-view" id="btn-settings"> Settings</button>
     </div>
     
+<!--  ///////////////////////////////////////////////////////////////// -->
     <div class="content">
-        <div class="six-view" id="dashboard">Dashboard</div>
+        <div class="six-view" id="dashboard">
+            <div class="dashboard-header">
+                <div class="welcome-text">
+                    <h2>Bonjour</h2>
+                    <p>Aperçu rapide de vos finances</p>
+                </div>
+                <div class="month-selector">
+                    <button id="prevMonth">&lt;</button>
+                    <span id="currentMonthDisplay">Mai 2026</span>
+                    <button id="nextMonth">&gt;</button>
+                </div>
+            </div>
+
+            <div class="summary-cards">
+                <div class="card solde">
+                    <small>SOLDE ACTUEL</small>
+                    <h2 id="dash-solde">0 Ar</h2>
+                    <span class="trend" id="dash-trend">+0% vs mois dernier</span>
+                </div>
+                <div class="card revenus">
+                    <small>REVENUS</small>
+                    <h2 id="dash-revenus" class="green">0 Ar</h2>
+                    <p id="dash-income-count">0 entrées ce mois</p>
+                </div>
+                <div class="card depenses">
+                    <small>DÉPENSES</small>
+                    <h2 id="dash-depenses" class="red">0 Ar</h2>
+                    <p id="dash-expense-count">0 transactions</p>
+                </div>
+            </div>
+
+            <div class="dashboard-main-grid">
+                <div class="chart-container">
+                    <h3>Répartition des dépenses</h3>
+                    <canvas id="expenseChart"></canvas>
+                </div>
+
+                <div class="sidebar-info">
+                    <div class="upcoming-box">
+                        <h3>À venir cette semaine</h3>
+                        <div id="dash-upcoming-list"></div>
+                    </div>
+                    <div class="goals-box">
+                        <h3>Mes objectifs</h3>
+                        <div id="dash-goals-list"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 <!--  ///////////////////////////////////////////////////////////////// -->
         <div class="six-view" id="budget">
@@ -257,5 +307,7 @@
     <script src="js/budget.js"></script>
     <script src="js/Preference.js"></script>
     <script src="js/upcoming.js"></script>
+    <script src="js/history.js"></script>
+    <script src="js/dashboard.js"></script>
 </body>
 </html>
