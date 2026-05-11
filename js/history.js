@@ -1,0 +1,10 @@
+const filterPeriod = document.getElementById("filterPeriod")
+const filterStart = document.getElementById("filterStart")
+const filterEnd = document.getElementById("filterEnd")
+const typeFilter = document.getElementById("categoryFilter")
+const resetBtn = document.getElementById("resetFilter")
+
+const historyList = document.getElementById("historyList")
+const totalIncome = document.getElementById("totalIncome")
+const totalExpense = document.getElementById("totalExpense")
+const netBalance = document.getElementById("netBalance")
