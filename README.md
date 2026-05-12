@@ -51,3 +51,11 @@ suivantes.
  - c'est là qu'on choisit catégories et sous categories
  - la preference
  - et le data 
+
+ # Technologie utilisées
+ - Frontend : HTML5, CSS3
+ - Logique : JavaScript ES6+ (Découpé en modules : dashboard.js, budget.js, goals.js, etc.).
+- Visualisation : Canvas API (via dashboard.js) pour les graphiques.
+
+# INSTALLATION
+git clone https://github.com/FITIAVANARM/Personnal-Financial-Manager.git
