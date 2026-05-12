@@ -4,6 +4,9 @@ const dashExpense = document.getElementById("dash-expense")
 const upcomingLst = document.getElementById("dash-upcoming-list")
 const goalList = document.getElementById("dash-goals-list")
 
+const monthDisplay = document.getElementById("currentMonthDisplay")
+const choiceMonth = document.getElementById("prevMonth")
+
 function loadDashboard() {
   
   let transactions = [];
@@ -83,3 +86,16 @@ function updateGoals(goals) {
     goalList.appendChild(div);
   });
 }
+
+let defaultMonth = 5;
+const monthNames = ["January", "Febroary", "March", "April", "Mey", "June", "July", "August", "September", "November", "December"];
+
+function updateMonth() {
+  monthDisplay.textContent = `${monthNames[defaultMonth-1]} 2026`;
+}
+
+choiceMonth.addEventListener("click", () => {
+  defaultMonth = defaultMonth > 1 ? currentMonth - 1 : 12;
+  updateMonth();
+})
+
