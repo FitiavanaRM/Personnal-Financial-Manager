@@ -2,6 +2,7 @@ const dashBalance = document.getElementById("dash-balance")
 const dashIncome = document.getElementById("dash-income")
 const dashExpense = document.getElementById("dash-expense")
 const upcomingLst = document.getElementById("dash-upcoming-list")
+const goalList = document.getElementById("dash-goals-list")
 
 function loadDashboard() {
   
@@ -58,4 +59,27 @@ function updateUpcoming(upcoming) {
     `;
     upcomingLst.appendChild(div);
   })
+}
+
+function updateGoals(goals) {
+  goalList.innerHTML = "";
+
+  if(goals.length === 0) {
+    goalList.innerHTML = "<p>None</p>";
+    return;
+  }
+
+  goals.slice(0, 2).forEach(element => {
+    const progress = goalList.targetAmount ? Math.min((element.saveAmount / element.targetAmount) * 100, 100) : 0;
+    const div = document.createElement("div");
+    div.className = "goal-item";
+    div.innerHTML = ` 
+      <div class="goal-name">${element.name}</div>
+      <div class="progress-bar">
+        <div class="progress" style="width: ${progress}%"></div>
+      </div>
+      <small>${element.savedAmount} / ${element.targetAmount} Ar</small>
+    `;
+    goalList.appendChild(div);
+  });
 }
