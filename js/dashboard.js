@@ -5,7 +5,8 @@ const upcomingLst = document.getElementById("dash-upcoming-list")
 const goalList = document.getElementById("dash-goals-list")
 
 const monthDisplay = document.getElementById("currentMonthDisplay")
-const choiceMonth = document.getElementById("prevMonth")
+const prevMonth = document.getElementById("prevMonth")
+const nextMonth = document.getElementById("nextMonth")
 
 function loadDashboard() {
   
@@ -22,6 +23,10 @@ function loadDashboard() {
   if(localStorage.getItem("pfm_upcoming")) {
     upcoming = JSON.parse(localStorage.getItem("pfm_upcoming"));
   }
+
+  updateSummary(transactions);
+  upcomingLst(upcoming);
+  updateGoals(goals);
 }
 
 function updateSummary(transactions) {
@@ -94,8 +99,20 @@ function updateMonth() {
   monthDisplay.textContent = `${monthNames[defaultMonth-1]} 2026`;
 }
 
-choiceMonth.addEventListener("click", () => {
+prevMonth.addEventListener("click", () => {
   defaultMonth = defaultMonth > 1 ? currentMonth - 1 : 12;
   updateMonth();
+});
+
+nextMonth.addEventListener("click", () => {
+  defaultMonth = defaultMonth < 12 ? currentMonth + 1 : 1;
+  updateMonth();
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  loadDashboard();
+  updateMonth();
 })
+
+
 
