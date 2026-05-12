@@ -8,6 +8,65 @@ const monthDisplay = document.getElementById("currentMonthDisplay")
 const prevMonth = document.getElementById("prevMonth")
 const nextMonth = document.getElementById("nextMonth")
 
+const expenseChartDisplay = document.getElementById("expenseChart")
+
+let expenseChart;
+function createChart(transactions) {
+  const categoryTotals = {};
+  transactions.forEach(element => {
+    if(element.type === "expense" && element.subCateg) {
+      if(!categoryTotals[element.subCateg]) {
+        categoryTotals[element.subCateg] = 0;
+      }
+      categoryTotals[element.subCateg] += element.amount;
+    }
+  });
+
+  const labels = Object.keys(categoryTotals);
+  const data = Object.values(categoryTotals);
+
+  const colors = [ "#9b3e3e", "#896930", "#987b23", "#5a7630", "#308750", "#10b981", "#14b8a6", "#06b6d4"];
+
+  if (expenseChart) {
+    expenseChart.destroy();
+  }
+
+  expenseChart = new Chart(expenseChartDisplay, {
+    type : "doughnut",
+    data: {
+      labels: labels.length ? labels: ["None"],
+      datasets: [{
+        data: data.length ? data : [1],
+        backgroundColor : colors,
+        borderWidth: 2,
+        borderColor: "#1e2937"
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          position: "bottom",
+          labels: {
+            colors: "#e2e8f0",
+            padding: 15,
+            font: {
+              size: 13
+            }
+          }
+        },
+        tooltip: {
+          callbacks: {
+            label: function(context) {
+              return context.label + " : " + context.raw + " Ar";
+            }
+          }
+        }
+      }
+    }
+  });
+}
 function loadDashboard() {
   
   let transactions = [];
@@ -25,8 +84,9 @@ function loadDashboard() {
   }
 
   updateSummary(transactions);
-  upcomingLst(upcoming);
+  updateUpcoming(upcoming);
   updateGoals(goals);
+  createChart(transactions);
 }
 
 function updateSummary(transactions) {
@@ -54,7 +114,7 @@ function updateUpcoming(upcoming) {
   upcomingLst.innerHTML = "";
 
   if(upcoming.length === 0) {
-    upcomingLst = "<p>NONE</p>";
+    upcomingLst.innerHTML = "<p>NONE</p>";
     return;
   }
 
@@ -78,7 +138,7 @@ function updateGoals(goals) {
   }
 
   goals.slice(0, 2).forEach(element => {
-    const progress = goalList.targetAmount ? Math.min((element.saveAmount / element.targetAmount) * 100, 100) : 0;
+    const progress = element.targetAmount ? Math.min((element.saveAmount / element.targetAmount) * 100, 100) : 0;
     const div = document.createElement("div");
     div.className = "goal-item";
     div.innerHTML = ` 
@@ -93,19 +153,19 @@ function updateGoals(goals) {
 }
 
 let defaultMonth = 5;
-const monthNames = ["January", "Febroary", "March", "April", "Mey", "June", "July", "August", "September", "November", "December"];
+const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October ","November", "December"];
 
 function updateMonth() {
   monthDisplay.textContent = `${monthNames[defaultMonth-1]} 2026`;
 }
 
 prevMonth.addEventListener("click", () => {
-  defaultMonth = defaultMonth > 1 ? currentMonth - 1 : 12;
+  defaultMonth = defaultMonth > 1 ? defaultMonth - 1 : 12;
   updateMonth();
 });
 
 nextMonth.addEventListener("click", () => {
-  defaultMonth = defaultMonth < 12 ? currentMonth + 1 : 1;
+  defaultMonth = defaultMonth < 12 ? defaultMonth + 1 : 1;
   updateMonth();
 });
 

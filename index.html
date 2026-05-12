@@ -37,47 +37,47 @@
         <div class="six-view" id="dashboard">
             <div class="dashboard-header">
                 <div class="welcome-text">
-                    <h2>Bonjour</h2>
-                    <p>Aperçu rapide de vos finances</p>
+                    <h2>DASHBOARD</h2>
+                    <p>Quick overview of your finances</p>
                 </div>
                 <div class="month-selector">
                     <button id="prevMonth">&lt;</button>
-                    <span id="currentMonthDisplay">Mai 2026</span>
+                    <span id="currentMonthDisplay">Mey 2026</span>
                     <button id="nextMonth">&gt;</button>
                 </div>
             </div>
 
             <div class="summary-cards">
-                <div class="card solde">
-                    <small>SOLDE ACTUEL</small>
-                    <h2 id="dash-solde">0 Ar</h2>
-                    <span class="trend" id="dash-trend">+0% vs mois dernier</span>
+                <div class="card-balance">
+                    <small>NET BALANCE</small>
+                    <h2 id="dash-balance">0 Ar</h2>
+                    <span class="trend" id="dash-trend">+0%</span>
                 </div>
-                <div class="card revenus">
-                    <small>REVENUS</small>
-                    <h2 id="dash-revenus" class="green">0 Ar</h2>
-                    <p id="dash-income-count">0 entrées ce mois</p>
+                <div class="card-income">
+                    <small>INCOME</small>
+                    <h2 id="dash-income" class="green">0 Ar</h2>
+                    <p id="dash-income-count">0 entries this month</p>
                 </div>
-                <div class="card depenses">
-                    <small>DÉPENSES</small>
-                    <h2 id="dash-depenses" class="red">0 Ar</h2>
+                <div class="card-expense">
+                    <small>EXPENDITURE</small>
+                    <h2 id="dash-expense" class="red">0 Ar</h2>
                     <p id="dash-expense-count">0 transactions</p>
                 </div>
             </div>
 
             <div class="dashboard-main-grid">
                 <div class="chart-container">
-                    <h3>Répartition des dépenses</h3>
+                    <h3>Distribution of expenses</h3>
                     <canvas id="expenseChart"></canvas>
                 </div>
 
                 <div class="sidebar-info">
                     <div class="upcoming-box">
-                        <h3>À venir cette semaine</h3>
+                        <h3>Coming this week</h3>
                         <div id="dash-upcoming-list"></div>
                     </div>
                     <div class="goals-box">
-                        <h3>Mes objectifs</h3>
+                        <h3>Goals</h3>
                         <div id="dash-goals-list"></div>
                     </div>
                 </div>
@@ -351,6 +351,7 @@
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="js/navigations.js"></script>
     <script src="js/categories.js"></script>
     <script src="js/budget.js"></script>
@@ -359,5 +360,6 @@
     <script src="js/history.js"></script>
     <script src="js/dashboard.js"></script>
     <script src="js/goals.js"></script>
+    
 </body>
 </html>

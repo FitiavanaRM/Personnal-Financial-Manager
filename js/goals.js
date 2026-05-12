@@ -65,8 +65,8 @@ function renderGoals() {
     if (goals.length === 0) {
         goalsGrid.innerHTML = `
             <p style="grid-column: 1/-1; text-align: center; padding: 40px; color: #64748b;">
-                Aucun objectif pour le moment.<br>
-                Cliquez sur "+ New goal" pour en créer un.
+                None.<br>
+                Cliquez sur "+ New goal"
             </p>`;
         return;
     }
@@ -110,16 +110,18 @@ function renderGoals() {
 }
 
 function addNewGoal() {
-    const name = prompt("Nom de l'objectif :");
-    if (!name) return;
+    const name = prompt("Goal name :");
+    if (!name) {
+        return;
+    } 
 
-    const target = parseFloat(prompt("Montant cible (Ar) :"));
+    const target = parseFloat(prompt("Targeted amount (Ar) :"));
     if (!target || target <= 0) {
-        alert("Montant cible invalide !");
+        alert("Invalid targeted amount!");
         return;
     }
 
-    const deadline = prompt("Date limite (optionnel - format JJ/MM/AAAA) :") || "";
+    const deadline = prompt("Deadline :") || "";
 
     const newGoal = {
         id: Date.now(),
@@ -140,9 +142,10 @@ function depositToGoal(id) {
     const goal = goals.find(g => g.id === id);
     if (!goal) return;
 
-    const amount = parseFloat(prompt(`Combien voulez-vous déposer dans "${goal.name}" ?`));
-    if (!amount || amount <= 0) return;
-
+    const amount = parseFloat(prompt(`How much do you want to deposit in "${goal.name}" ?`));
+    if (!amount || amount <= 0) {
+        return;
+    }
     goal.savedAmount += amount;
     goal.deposits.push({
         amount: amount,
